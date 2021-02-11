@@ -10,7 +10,7 @@
             "request": "launch",
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/BadNews/bin/Debug/netcoreapp3.1/BadNews.dll",
+            "program": "${workspaceFolder}/BadNews/bin/Debug/net5.0/BadNews.dll",
             "args": [],
             "cwd": "${workspaceFolder}/BadNews",
             "stopAtEntry": false,
