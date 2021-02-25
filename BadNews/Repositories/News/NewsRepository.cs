@@ -22,7 +22,6 @@ namespace BadNews.Repositories.News
 
         public void InitializeDataBase(IEnumerable<NewsArticle> articles)
         {
-            var cd = Directory.GetCurrentDirectory();
             var dataFileInfo = new FileInfo(DataFilePath);
             if (dataFileInfo.Exists)
                 dataFileInfo.Delete();
@@ -176,15 +175,21 @@ namespace BadNews.Repositories.News
                         if (line != recordSeparator)
                         {
                             if (objectLine++ > 0)
+                            {
                                 dataBuilder.Append(line);
+                            }
                             else
+                            {
                                 metaBuilder.Append(line);
+                            }
                         }
                         else
                         {
                             if (metaBuilder.Length > 0 || dataBuilder.Length > 0)
+                            {
                                 if (onObjectRead(metaBuilder, dataBuilder))
                                     return;
+                            }
 
                             objectLine = 0;
                             metaBuilder = new StringBuilder();
