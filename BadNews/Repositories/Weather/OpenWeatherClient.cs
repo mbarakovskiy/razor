@@ -18,7 +18,7 @@ namespace BadNews.Repositories.Weather
 
         public async Task<OpenWeatherForecast> GetWeatherFromApiAsync()
         {
-            if (string.IsNullOrEmpty(this.apiKey))
+            if (string.IsNullOrEmpty(apiKey))
                 return null;
                 
             var request = new HttpRequestMessage(HttpMethod.Get,

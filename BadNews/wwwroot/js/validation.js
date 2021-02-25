@@ -1,10 +1,10 @@
-// Этот код будет вызыван для всех тэгов, у которых есть атрибуты data-val=true и есть data-val-stopwords
+// Этот код будет вызыван для всех тэгов, у которых есть атрибуты data-val=true и data-val-stopwords
 // Он нужен, чтобы подключить правила проверки и подготовить для них параметры
 $.validator.unobtrusive.adapters.add('stopwords', ['commaSeparatedWords'], function (options) {
     // Если к тэгу добавлен атрибут data-val-stopwords-commaSeparatedWords,
-    // то его значение можно получить, если передать во втором аргументе его имя без префикса,
-    // т.е. 'commaSeparatedWords'.
-    // Тогда значение будет находится в options.params под ключем commaSeparatedWords.
+    // то его значение можно получить, передав во втором аргументе его имя без префикса,
+    // т.е. передав 'commaSeparatedWords'.
+    // Тогда значение будет находится в options.params под ключом commaSeparatedWords.
     var commaSeparatedWords = options.params.commaSeparatedWords;
 
     // Подготовка параметров для правила проверки stopwords-rule и его подключение
