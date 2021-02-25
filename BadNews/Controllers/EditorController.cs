@@ -40,5 +40,12 @@ namespace BadNews.Controllers
                 id = id
             });
         }
+
+        [HttpPost]
+        public IActionResult DeleteArticle(Guid id)
+        {
+            newsRepository.DeleteArticleById(id);
+            return RedirectToAction("Index", "News");
+        }
     }
 }
